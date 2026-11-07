@@ -3,47 +3,43 @@
  "predictions": {
   "ml_f1": {
    "text": "F1~0.9, precision cao hơn recall vì dữ liệu mô hình bị lệch, làm cho mô hình có xu hướng dữ đoán ham, FP ít xảy ra dẫn dến precision cao; FN dễ xảy ra hơn dẫn đến recall thấp đi ",
-   "time": "10:31:09"
+   "time": "16:04:28"
   },
   "ml_lr": {
    "text": ".lr=0.001 thì đường loss giảm rất chậm ở những epoch đầu, sau đó giảm đều tiệm cận đến giá trị thấp, lr=50 thì đường loss hỗn loạn xu hướng bị divergence",
-   "time": "10:31:16"
+   "time": "16:04:33"
   },
   "dl_curve": {
    "text": "(1) val loss không giảm mãi, (2) MLP sẽ bằng hoặc kém hơn LR về F1 vì model quá phức tạp với sô lượng tham số lớn so với đầu vào, dễ overfitting, ",
-   "time": "10:31:36"
+   "time": "16:04:54"
   },
   "dl_relu": {
    "text": "Xóa lớp ReLu, mạng nn tương đương với mô hình linear regression với nhiều tham số thừa, F1 sẽ sát với kết quả ở phần 1",
-   "time": "10:31:46"
+   "time": "16:05:05"
   },
   "emb_search": {
    "text": "spam, tuy không chứa từ spam nhưng ngữ nghĩa mang tính spam",
-   "time": "10:34:32"
+   "time": "16:07:26"
   },
   "emb_tricky": {
    "text": "3b đúng nhiều hơn",
-   "time": "10:35:50"
+   "time": "16:08:37"
   },
   "llm_models": {
    "text": "(1) terra và luna sẽ không chênh lệch F1 quá nhiều, có thể terra sẽ cao hơn 1 khoảng rất nhỏ; (2) đắt hơn 10 ước tính theo bảng giá. (3) Khó thắng, vì chỉ chạy zero-shot, trong khi 3b được train trên dataset ",
-   "time": "13:01:23"
+   "time": "16:08:46"
   },
   "llm_fewshot": {
    "text": "F1 tăng nhẹ, chi phí tăng khoảng 3~4 lần ",
-   "time": "14:15:39"
+   "time": "16:09:59"
   },
   "tradeoff": {
    "text": "1,2,3c nằm trên đường Pareto;1,2 nằm bên phải",
-   "time": "13:04:46"
-  },
-  "(1) hard_eval": {
-   "text": "Các model 1 2 sẽ tụt xuống 40%, model 3 xuống 70%, các model 4 thì khoảng 85%;(2) Khó với BOW : ham_looks_spam, obfuscation; Khó với LLM : promt_injection ",
-   "time": "13:48:12"
+   "time": "16:10:44"
   },
   "hard_eval": {
    "text": "(1) Các model 1 2 sẽ tụt xuống 40%, model 3 xuống 70%, các model 4 thì khoảng 85%;(2) Khó với BOW : ham_looks_spam, obfuscation; Khó với LLM : promt_injection ",
-   "time": "13:48:34"
+   "time": "16:10:46"
   }
  },
  "checks": {
@@ -66,55 +62,43 @@
  "experiments": [
   {
    "key": "ml_f1",
-   "time": "10:31:09"
+   "time": "16:04:28"
   },
   {
    "key": "ml_lr",
-   "time": "10:31:16"
+   "time": "16:04:33"
   },
   {
    "key": "dl_curve",
-   "time": "10:31:36"
+   "time": "16:04:54"
   },
   {
    "key": "dl_relu",
-   "time": "10:31:46"
+   "time": "16:05:05"
   },
   {
    "key": "emb_search",
-   "time": "10:34:32"
+   "time": "16:07:26"
   },
   {
    "key": "emb_tricky",
-   "time": "10:35:50"
+   "time": "16:08:37"
   },
   {
    "key": "llm_models",
-   "time": "12:09:53"
+   "time": "16:08:46"
   },
   {
    "key": "llm_fewshot",
-   "time": "12:20:21"
-  },
-  {
-   "key": "llm_models",
-   "time": "12:32:18"
-  },
-  {
-   "key": "llm_models",
-   "time": "13:01:24"
+   "time": "16:09:59"
   },
   {
    "key": "tradeoff",
-   "time": "13:05:56"
+   "time": "16:10:44"
   },
   {
    "key": "hard_eval",
-   "time": "13:48:34"
-  },
-  {
-   "key": "llm_fewshot",
-   "time": "14:15:43"
+   "time": "16:10:46"
   }
  ],
  "challenge": 5,
@@ -125,10 +109,10 @@
    "recall": 0.6846846846846847,
    "f1": 0.8085106382978723,
    "f1_SUB": 0.7096774193548387,
-   "train_s": 6.331798658999105,
-   "msg_per_s": 6711.764004954741,
-   "p50_ms": 0.06074399971112143,
-   "p95_ms": 1.8258534505548585,
+   "train_s": 4.370688555001834,
+   "msg_per_s": 10198.616812058684,
+   "p50_ms": 0.052479001169558614,
+   "p95_ms": 0.11204780075786389,
    "usd_per_1k": 0.0
   },
   "2. BoW + MLP (deep learning)": {
@@ -137,10 +121,10 @@
    "recall": 0.8018018018018018,
    "f1": 0.8855721393034827,
    "f1_SUB": 0.787878787878788,
-   "train_s": 10.099775059999956,
-   "msg_per_s": 27574.463058008514,
-   "p50_ms": 0.3132125002593966,
-   "p95_ms": 2.5020775002303672,
+   "train_s": 10.342613206998067,
+   "msg_per_s": 29305.08418785501,
+   "p50_ms": 0.2929010024672607,
+   "p95_ms": 0.3488577011012238,
    "usd_per_1k": 0.0
   },
   "3a. Encoder (MiniLM) + kNN": {
@@ -149,10 +133,10 @@
    "recall": 0.9009009009009009,
    "f1": 0.91324200913242,
    "f1_SUB": 0.8947368421052632,
-   "train_s": 110.25101127899961,
-   "msg_per_s": 32.09498956555438,
-   "p50_ms": 133.06287050045285,
-   "p95_ms": 254.34100595052766,
+   "train_s": 94.81587619700076,
+   "msg_per_s": 32.28745384946327,
+   "p50_ms": 41.33136450218444,
+   "p95_ms": 64.04411199800958,
    "usd_per_1k": 0.0
   },
   "3b. Encoder (MiniLM) + LogReg": {
@@ -161,10 +145,10 @@
    "recall": 0.8918918918918919,
    "f1": 0.9339622641509434,
    "f1_SUB": 0.9189189189189189,
-   "train_s": 112.9947454789999,
-   "msg_per_s": 37.180310948608074,
-   "p50_ms": 25.401783499546582,
-   "p95_ms": 37.718855399862136,
+   "train_s": 95.32567277399721,
+   "msg_per_s": 37.44868961088399,
+   "p50_ms": 35.12838349888625,
+   "p95_ms": 55.7846575995427,
    "usd_per_1k": 0.0
   },
   "3c. Encoder (MiniLM) + MLP head": {
@@ -173,22 +157,22 @@
    "recall": 0.8738738738738738,
    "f1": 0.9150943396226415,
    "f1_SUB": 0.9189189189189189,
-   "train_s": 111.16038736199971,
-   "msg_per_s": 39.4068913027434,
-   "p50_ms": 39.85758850012644,
-   "p95_ms": 56.04112754981542,
+   "train_s": 95.76987167100015,
+   "msg_per_s": 38.81876165616297,
+   "p50_ms": 27.956801999607706,
+   "p95_ms": 37.002552948251825,
    "usd_per_1k": 0.0
   },
   "4a. LLM nhỏ zero-shot": {
-   "accuracy": 0.9,
+   "accuracy": 0.925,
    "precision": 1.0,
-   "recall": 0.8,
-   "f1": 0.888888888888889,
-   "f1_SUB": 0.888888888888889,
+   "recall": 0.85,
+   "f1": 0.9189189189189189,
+   "f1_SUB": 0.9189189189189189,
    "train_s": 0.0,
-   "msg_per_s": 1.157055829163777,
-   "p50_ms": 775.857148499199,
-   "p95_ms": 1228.2012977494542,
+   "msg_per_s": 1.1782486477495502,
+   "p50_ms": 780.2275459980592,
+   "p95_ms": 1191.5929758501063,
    "usd_per_1k": 0.006386666666666666
   },
   "4b. LLM lớn zero-shot": {
@@ -198,9 +182,9 @@
    "f1": 0.9189189189189189,
    "f1_SUB": 0.9189189189189189,
    "train_s": 0.0,
-   "msg_per_s": 1.109850855210616,
-   "p50_ms": 832.4279184998886,
-   "p95_ms": 1149.5912944500553,
+   "msg_per_s": 1.1236832961847667,
+   "p50_ms": 829.2287109998142,
+   "p95_ms": 1118.240347300889,
    "usd_per_1k": 0.06386666666666667
   },
   "4c. LLM nhỏ few-shot": {
@@ -210,9 +194,9 @@
    "f1": 0.9473684210526316,
    "f1_SUB": 0.9473684210526316,
    "train_s": 0.0,
-   "msg_per_s": 1.2076722569486469,
-   "p50_ms": 757.4659839992819,
-   "p95_ms": 1356.1110024491416,
+   "msg_per_s": 0.9225964018346547,
+   "p50_ms": 788.6525110025104,
+   "p95_ms": 2786.858636849498,
    "usd_per_1k": 0.02118666666666667
   }
  }
